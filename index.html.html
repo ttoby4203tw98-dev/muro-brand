@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>MURO 暮若 — 品牌色調卡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  :root {
+    --c-misty-white: #F5F1EA;
+    --c-oat: #E8DFD0;
+    --c-milk-tea: #D4C4AC;
+    --c-dusk-gray: #9B9081;
+    --c-deep-brown: #6B5640;
+    --c-ink-green: #4A5247;
+    --c-dusk-purple: #6B5B73;
+    --c-candle-gold: #C9A876;
+    --c-near-black: #1A1A1A;
+  }
+  
+  html, body {
+    background: var(--c-misty-white);
+    color: var(--c-near-black);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+  
+  .page {
+    width: 1240px;
+    margin: 0 auto;
+    padding: 80px 70px;
+    background: var(--c-misty-white);
+    position: relative;
+  }
+  
+  /* 頁首 */
+  header {
+    border-bottom: 0.5px solid var(--c-dusk-gray);
+    padding-bottom: 50px;
+    margin-bottom: 70px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+  
+  .brand-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.45em;
+    color: var(--c-dusk-gray);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--c-near-black);
+    line-height: 1;
+  }
+  
+  .brand-sub {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 18px;
+    color: var(--c-deep-brown);
+    margin-top: 16px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+  }
+  
+  .doc-meta {
+    text-align: right;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--c-dusk-gray);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+  }
+  
+  .doc-meta .title {
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    color: var(--c-near-black);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  
+  /* 章節標題 */
+  .section-label {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+  
+  .section-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--c-candle-gold);
+    letter-spacing: 0.3em;
+    font-style: italic;
+  }
+  
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--c-near-black);
+    letter-spacing: 0.15em;
+  }
+  
+  .section-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--c-dusk-gray);
+    letter-spacing: 0.1em;
+  }
+  
+  .section-line {
+    flex: 1;
+    height: 0.5px;
+    background: var(--c-dusk-gray);
+    opacity: 0.4;
+    margin-bottom: 8px;
+  }
+  
+  /* 主色區塊 */
+  .palette-block { margin-bottom: 70px; }
+  
+  .palette-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 28px;
+    padding-left: 8px;
+  }
+  
+  .palette-purpose {
+    font-family: 'Noto Serif TC', serif;
+    color: var(--c-deep-brown);
+    font-size: 15px;
+    letter-spacing: 0.05em;
+  }
+  
+  .palette-percent {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--c-candle-gold);
+    line-height: 1;
+  }
+  
+  .palette-percent sup {
+    font-size: 22px;
+    margin-left: 2px;
+  }
+  
+  /* 色票網格 */
+  .swatch-grid {
+    display: grid;
+    gap: 14px;
+  }
+  
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  
+  .swatch {
+    aspect-ratio: 4 / 5;
+    border-radius: 2px;
+    padding: 22px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .swatch-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    opacity: 0.65;
+  }
+  
+  .swatch-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .swatch-name-cn {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    line-height: 1.3;
+  }
+  
+  .swatch-name-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    opacity: 0.7;
+    margin-bottom: 14px;
+  }
+  
+  .swatch-codes {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  
+  .swatch-hex {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+  }
+  
+  .swatch-rgb {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    opacity: 0.65;
+  }
+  
+  /* 個別色票顏色設定 */
+  .sw-misty { background: var(--c-misty-white); color: var(--c-near-black); border: 0.5px solid var(--c-dusk-gray); }
+  .sw-oat { background: var(--c-oat); color: var(--c-near-black); }
+  .sw-milk { background: var(--c-milk-tea); color: var(--c-near-black); }
+  .sw-dusk-gray { background: var(--c-dusk-gray); color: var(--c-misty-white); }
+  .sw-brown { background: var(--c-deep-brown); color: var(--c-misty-white); }
+  .sw-green { background: var(--c-ink-green); color: var(--c-misty-white); }
+  .sw-purple { background: var(--c-dusk-purple); color: var(--c-misty-white); }
+  .sw-gold { background: var(--c-candle-gold); color: var(--c-near-black); }
+  .sw-black { background: var(--c-near-black); color: var(--c-misty-white); }
+  
+  /* 配色示範區 */
+  .demo-section {
+    margin-top: 80px;
+    padding-top: 70px;
+    border-top: 0.5px solid var(--c-dusk-gray);
+  }
+  
+  .demo-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px;
+    margin-top: 36px;
+  }
+  
+  .demo-card {
+    padding: 50px 40px;
+    border-radius: 2px;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* === 精準配色示範 mockup === */
+  .demo-mockup {
+    aspect-ratio: 4 / 5;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+  }
+  
+  .mockup-label {
+    position: absolute;
+    top: -28px;
+    left: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--c-deep-brown);
+    white-space: nowrap;
+  }
+  
+  /* ===== 範例 A: 米白底 + 深棕輔 + 燭光金點 ===== */
+  .demo-mockup-a {
+    background: var(--c-misty-white);
+    border: 0.5px solid var(--c-dusk-gray);
+  }
+  
+  .mockup-content-a {
+    position: absolute;
+    top: 50px;
+    left: 36px;
+    right: 36px;
+  }
+  
+  .mockup-headline-a {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 34px;
+    font-weight: 300;
+    color: var(--c-near-black);
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  
+  .mockup-sub-a {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--c-dusk-gray);
+    letter-spacing: 0.15em;
+  }
+  
+  /* 輔助色：底部一條深棕色帶（約佔 22% 高度） */
+  .mockup-aux-a {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 22%;
+    background: var(--c-deep-brown);
+    color: var(--c-misty-white);
+    padding: 18px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .aux-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    opacity: 0.85;
+  }
+  
+  .aux-btn {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    padding: 8px 18px;
+    border: 0.5px solid var(--c-misty-white);
+    align-self: flex-start;
+    color: var(--c-misty-white);
+  }
+  
+  /* 點綴色：右上角小金色標籤 */
+  .mockup-accent-a {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--c-candle-gold);
+    border: 0.5px solid var(--c-candle-gold);
+    padding: 4px 10px;
+    text-transform: uppercase;
+  }
+  
+  /* ===== 範例 B: 燕麥底 + 墨綠輔 + 燭光金點 ===== */
+  .demo-mockup-b {
+    background: var(--c-oat);
+  }
+  
+  .mockup-content-b {
+    position: absolute;
+    top: 60px;
+    left: 36px;
+    right: 36px;
+  }
+  
+  .mockup-headline-b {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--c-near-black);
+    letter-spacing: 0.1em;
+    line-height: 1.55;
+  }
+  
+  /* 輔助色：右下方一塊墨綠色區（約佔 22% 面積） */
+  .mockup-aux-b {
+    position: absolute;
+    bottom: 28px;
+    right: 28px;
+    width: 55%;
+    background: var(--c-ink-green);
+    color: var(--c-misty-white);
+    padding: 18px 22px;
+    border-radius: 1px;
+  }
+  
+  .aux-title-b {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    margin-bottom: 8px;
+  }
+  
+  .aux-divider-b {
+    width: 24px;
+    height: 0.5px;
+    background: var(--c-candle-gold);
+    margin-bottom: 8px;
+  }
+  
+  .aux-text-b {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    opacity: 0.8;
+    letter-spacing: 0.05em;
+  }
+  
+  /* 點綴色：左上方小金色標 */
+  .mockup-accent-b {
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.35em;
+    color: var(--c-candle-gold);
+    font-weight: 500;
+  }
+  
+  /* ===== 範例 C: 奶茶底 + 暮色紫輔 + 墨黑點 ===== */
+  .demo-mockup-c {
+    background: var(--c-milk-tea);
+  }
+  
+  .mockup-content-c {
+    position: absolute;
+    top: 48px;
+    left: 36px;
+    right: 36px;
+  }
+  
+  .mockup-headline-c {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--c-near-black);
+    letter-spacing: 0.12em;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+  
+  .mockup-sub-c {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--c-deep-brown);
+    letter-spacing: 0.15em;
+    opacity: 0.75;
+  }
+  
+  /* 輔助色：底部一條暮色紫色帶（佔 20% 高度） */
+  .mockup-aux-c {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20%;
+    background: var(--c-dusk-purple);
+    color: var(--c-misty-white);
+    display: flex;
+    align-items: center;
+    padding: 0 36px;
+  }
+  
+  .aux-title-c {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16px;
+    letter-spacing: 0.3em;
+    font-weight: 300;
+  }
+  
+  /* 點綴色：右上角墨黑標 */
+  .mockup-accent-c {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--c-near-black);
+    background: var(--c-misty-white);
+    padding: 4px 10px;
+    border: 0.5px solid var(--c-near-black);
+  }
+  
+  /* ===== 範例 D: 暮色灰底 + 深棕輔 + 燭光金點 ===== */
+  .demo-mockup-d {
+    background: var(--c-dusk-gray);
+  }
+  
+  .mockup-content-d {
+    position: absolute;
+    top: 60px;
+    left: 36px;
+    right: 36px;
+  }
+  
+  .mockup-headline-d {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--c-misty-white);
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+  }
+  
+  /* 輔助色：左下方一塊深棕區（約 22% 面積） */
+  .mockup-aux-d {
+    position: absolute;
+    bottom: 28px;
+    left: 28px;
+    width: 60%;
+    background: var(--c-deep-brown);
+    color: var(--c-misty-white);
+    padding: 20px 22px;
+  }
+  
+  .aux-title-d {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    margin-bottom: 12px;
+    opacity: 0.85;
+  }
+  
+  .aux-btn-d {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--c-candle-gold);
+  }
+  
+  /* 點綴色:右上方燭光金小標 */
+  .mockup-accent-d {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    color: var(--c-candle-gold);
+    font-style: italic;
+  }
+  
+  /* === 為配色示範保留必要邊距 === */
+  .demo-section .demo-grid {
+    margin-top: 64px;
+  }
+  
+  /* ============================================ */
+  /* 互動式搭配器                                 */
+  /* ============================================ */
+  .playground-section {
+    margin-top: 90px;
+    padding-top: 70px;
+    border-top: 0.5px solid var(--c-dusk-gray);
+  }
+  
+  .playground {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 50px;
+    margin-top: 36px;
+    align-items: start;
+  }
+  
+  /* 左側選色區 */
+  .playground-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  
+  .picker-group {
+    background: var(--c-misty-white);
+    border: 0.5px solid var(--c-dusk-gray);
+    border-radius: 2px;
+    padding: 22px 24px;
+  }
+  
+  .picker-label {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .picker-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--c-candle-gold);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  
+  .picker-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14px;
+    color: var(--c-near-black);
+    letter-spacing: 0.15em;
+  }
+  
+  .picker-swatches {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .picker-swatches[data-group="accent"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .picker-chip {
+    aspect-ratio: 5 / 3;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 2px;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--c-near-black);
+    transition: transform 0.2s, box-shadow 0.2s, outline-width 0.15s;
+    outline: 0px solid var(--c-candle-gold);
+    outline-offset: 2px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  
+  .picker-chip:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  .picker-chip.active {
+    outline: 2px solid var(--c-candle-gold);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  }
+  
+  .picker-chip span {
+    opacity: 0.9;
+  }
+  
+  /* 搭配摘要卡 */
+  .recipe-card {
+    background: var(--c-near-black);
+    color: var(--c-misty-white);
+    border-radius: 2px;
+    padding: 22px 24px;
+  }
+  
+  .recipe-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--c-candle-gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  
+  .recipe-row {
+    display: grid;
+    grid-template-columns: 50px 24px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 0.5px solid rgba(245, 241, 234, 0.12);
+  }
+  
+  .recipe-row:last-child { border-bottom: none; }
+  
+  .recipe-percent {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: var(--c-candle-gold);
+    font-style: italic;
+  }
+  
+  .recipe-swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    border: 0.5px solid rgba(245, 241, 234, 0.3);
+  }
+  
+  .recipe-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+  }
+  
+  .recipe-hex {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+  }
+  
+  /* 右側預覽區 */
+  .playground-preview {
+    position: sticky;
+    top: 20px;
+  }
+  
+  .preview-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 18px;
+    border-bottom: 0.5px solid var(--c-dusk-gray);
+  }
+  
+  .preview-tab {
+    background: transparent;
+    border: none;
+    padding: 12px 20px;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    color: var(--c-dusk-gray);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  
+  .preview-tab:hover { color: var(--c-deep-brown); }
+  
+  .preview-tab.active {
+    color: var(--c-near-black);
+    border-bottom-color: var(--c-candle-gold);
+  }
+  
+  .preview-frame { display: none; }
+  .preview-frame.active { display: block; }
+  
+  .preview-stage {
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.4s ease;
+  }
+  
+  /* 海報預覽 stage */
+  #stage-poster {
+    aspect-ratio: 4 / 5;
+    background: var(--c-misty-white);
+  }
+  
+  .poster-content {
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    right: 40px;
+  }
+  
+  .poster-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    opacity: 0.55;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    transition: color 0.4s;
+  }
+  
+  .poster-headline {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    margin-bottom: 14px;
+    transition: color 0.4s;
+  }
+  
+  .poster-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    opacity: 0.65;
+    transition: color 0.4s;
+  }
+  
+  .poster-aux {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 22%;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    transition: background-color 0.4s, color 0.4s;
+  }
+  
+  .poster-aux-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    opacity: 0.9;
+  }
+  
+  .poster-aux-btn {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    padding: 8px 16px;
+    border: 0.5px solid currentColor;
+    align-self: flex-start;
+    transition: border-color 0.4s, color 0.4s;
+  }
+  
+  .poster-accent {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    padding: 5px 12px;
+    border: 0.5px solid currentColor;
+    text-transform: uppercase;
+    transition: color 0.4s, border-color 0.4s;
+  }
+  
+  /* 商品卡預覽 stage */
+  #stage-card {
+    aspect-ratio: 4 / 5;
+    background: var(--c-misty-white);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-image-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    position: relative;
+  }
+  
+  .card-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
+    border: 0.5px dashed rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(0,0,0,0.3);
+    letter-spacing: 0.2em;
+  }
+  
+  .card-accent {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 2;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    font-weight: 500;
+    transition: color 0.4s;
+  }
+  
+  .card-info {
+    padding: 22px 30px 30px;
+    transition: background-color 0.4s, color 0.4s;
+  }
+  
+  .card-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    letter-spacing: 0.12em;
+    margin-bottom: 14px;
+  }
+  
+  .card-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    transition: color 0.4s;
+  }
+  
+  .card-btn {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    padding: 8px 14px;
+    border: 0.5px solid currentColor;
+    transition: color 0.4s, border-color 0.4s;
+  }
+  
+  /* 橫幅預覽 stage */
+  #stage-banner {
+    aspect-ratio: 16 / 9;
+    background: var(--c-misty-white);
+    display: flex;
+  }
+  
+  .banner-side {
+    width: 30%;
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 0.4s, color 0.4s;
+  }
+  
+  .banner-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    transition: color 0.4s;
+  }
+  
+  .banner-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    letter-spacing: 0.15em;
+  }
+  
+  .banner-main {
+    flex: 1;
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .banner-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    opacity: 0.55;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    transition: color 0.4s;
+  }
+  
+  .banner-headline {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    line-height: 1.45;
+    margin-bottom: 16px;
+    transition: color 0.4s;
+  }
+  
+  .banner-line {
+    width: 40px;
+    height: 1px;
+    margin-bottom: 14px;
+    transition: background-color 0.4s;
+  }
+  
+  .banner-foot {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    opacity: 0.7;
+    transition: color 0.4s;
+  }
+  
+  /* 響應式 - 小螢幕 */
+  @media (max-width: 1100px) {
+    .playground {
+      grid-template-columns: 1fr;
+    }
+    .playground-preview {
+      position: static;
+    }
+  }
+  
+  /* 使用規則區 */
+  .rules-section {
+    margin-top: 80px;
+    padding-top: 70px;
+    border-top: 0.5px solid var(--c-dusk-gray);
+  }
+  
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 36px;
+  }
+  
+  .rule-col {
+    padding: 30px 32px;
+    border-radius: 2px;
+  }
+  
+  .rule-yes {
+    background: var(--c-oat);
+  }
+  
+  .rule-no {
+    background: var(--c-misty-white);
+    border: 0.5px solid var(--c-near-black);
+  }
+  
+  .rule-head {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+  
+  .rule-yes .rule-head { color: var(--c-deep-brown); }
+  .rule-no .rule-head { color: var(--c-near-black); }
+  
+  .rule-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .rule-list li {
+    padding: 9px 0;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    color: var(--c-near-black);
+    line-height: 1.7;
+    letter-spacing: 0.05em;
+    border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  }
+  
+  .rule-list li:last-child { border-bottom: none; }
+  
+  .rule-list li::before {
+    content: '—';
+    margin-right: 12px;
+    color: var(--c-candle-gold);
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  /* 頁尾 */
+  footer {
+    margin-top: 90px;
+    padding-top: 40px;
+    border-top: 0.5px solid var(--c-dusk-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  
+  .footer-quote {
+    font-family: 'Noto Serif TC', serif;
+    font-style: normal;
+    font-size: 17px;
+    color: var(--c-deep-brown);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+  }
+  
+  .footer-meta {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--c-dusk-gray);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+  }
+  
+  /* 紙質感 */
+  .page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 25% 30%, rgba(212, 196, 172, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 70%, rgba(155, 144, 129, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .page > * { position: relative; z-index: 1; }
+  
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- 頁首 -->
+  <header>
+    <div>
+      <div class="brand-eyebrow">Brand Color System · 2026</div>
+      <h1 class="brand-name">MURO 暮若</h1>
+      <div class="brand-sub">暮色降臨 · 心若安然</div>
+    </div>
+    <div class="doc-meta">
+      <div class="title">Color Palette</div>
+      <div>For Design Team Use</div>
+      <div>Revision 01 · 2026.05</div>
+    </div>
+  </header>
+
+  <!-- ============================================ -->
+  <!-- 主色 -->
+  <!-- ============================================ -->
+  <div class="section-label">
+    <span class="section-num">01</span>
+    <span class="section-title">主色</span>
+    <span class="section-en">Primary Palette</span>
+    <span class="section-line"></span>
+  </div>
+  
+  <div class="palette-block">
+    <div class="palette-meta">
+      <div class="palette-purpose">背景、大面積版面、整體基調 — 用於主圖背景、賣場版面、詳情頁底色</div>
+      <div class="palette-percent">70<sup>%</sup></div>
+    </div>
+    
+    <div class="swatch-grid grid-4">
+      <div class="swatch sw-misty">
+        <div class="swatch-tag">— 01 —</div>
+        <div class="swatch-info">
+          <div class="swatch-name-cn">米白</div>
+          <div class="swatch-name-en">Misty White</div>
+          <div class="swatch-codes">
+            <div class="swatch-hex">#F5F1EA</div>
+            <div class="swatch-rgb">RGB 245 · 241 · 234</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="swatch sw-oat">
+        <div class="swatch-tag">— 02 —</div>
+        <div class="swatch-info">
+          <div class="swatch-name-cn">燕麥色</div>
+          <div class="swatch-name-en">Oat</div>
+          <div class="swatch-codes">
+            <div class="swatch-hex">#E8DFD0</div>
+            <div class="swatch-rgb">RGB 232 · 223 · 208</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="swatch sw-milk">
+        <div class="swatch-tag">— 03 —</div>
+        <div class="swatch-info">
+          <div class="swatch-name-cn">奶茶色</div>
+          <div class="swatch-name-en">Milk Tea</div>
+          <div class="swatch-codes">
+            <div class="swatch-hex">#D4C4AC</div>
+            <div class="swatch-rgb">RGB 212 · 196 · 172</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="swatch sw-dusk-gray">
+        <div class="swatch-tag">— 04 —</div>
+        <div class="swatch-info">
+          <div class="swatch-name-cn">暮色灰</div>
+          <div class="swatch-name-en">Dusk Gray</div>
+          <div class="swatch-codes">
+            <div class="swatch-hex">#9B9081</div>
+            <div class="swatch-rgb">RGB 155 · 144 · 129</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- 輔助色 -->
+  <!-- ============================================ -->
+  <div class="section-label">
+    <span class="section-num">02</span>
+    <span class="section-title">輔助色</span>
+    <span class="section-en">Secondary Palette</span>
+    <span class="section-line"></span>
+  </div>
+  
+  <div class="palette-block">
+    <div class="palette-meta">
+      <div class="palette-purpose">強調、層次、深度感 — 用於 CTA 按鈕、重點文案、區塊區隔</div>
+      <div class="palette-percent">20<sup>%</sup></div>
+    </div>
+    
+    <div class="swatch-grid grid-3">
+      <div class="swatch sw-brown">
+        <div class="swatch-tag">— 05 —</div>
+        <div class="swatch-info">
+          <div class="swatch-name-cn">深棕</div>
+          <div class="swatch-name-en">Deep Brown</div>
+          <div class="swatch-codes">
+            <div class="swatch-hex">#6B5640</div>
+            <div class="swatch-rgb">RGB 107 · 86 · 64</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="swatch sw-green">
+        <div class="swatch-tag">— 06 —</div>
+        <div class="swatch-info">
+          <div class="swatch-name-cn">墨綠</div>
+          <div class="swatch-name-en">Ink Green</div>
+          <div class="swatch-codes">
+            <div class="swatch-hex">#4A5247</div>
+            <div class="swatch-rgb">RGB 74 · 82 · 71</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="swatch sw-purple">
+        <div class="swatch-tag">— 07 —</div>
+        <div class="swatch-info">
+          <div class="swatch-name-cn">暮色紫</div>
+          <div class="swatch-name-en">Dusk Purple</div>
+          <div class="swatch-codes">
+            <div class="swatch-hex">#6B5B73</div>
+            <div class="swatch-rgb">RGB 107 · 91 · 115</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- 點綴色 -->
+  <!-- ============================================ -->
+  <div class="section-label">
+    <span class="section-num">03</span>
+    <span class="section-title">點綴色</span>
+    <span class="section-en">Accent Palette</span>
+    <span class="section-line"></span>
+  </div>
+  
+  <div class="palette-block">
+    <div class="palette-meta">
+      <div class="palette-purpose">少量點亮、文字、邊框細節 — 用於價格標、品牌標、強調文字</div>
+      <div class="palette-percent">10<sup>%</sup></div>
+    </div>
+    
+    <div class="swatch-grid grid-2">
+      <div class="swatch sw-gold">
+        <div class="swatch-tag">— 08 —</div>
+        <div class="swatch-info">
+          <div class="swatch-name-cn">燭光金</div>
+          <div class="swatch-name-en">Candle Gold</div>
+          <div class="swatch-codes">
+            <div class="swatch-hex">#C9A876</div>
+            <div class="swatch-rgb">RGB 201 · 168 · 118</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="swatch sw-black">
+        <div class="swatch-tag">— 09 —</div>
+        <div class="swatch-info">
+          <div class="swatch-name-cn">墨黑</div>
+          <div class="swatch-name-en">Near Black · for text</div>
+          <div class="swatch-codes">
+            <div class="swatch-hex">#1A1A1A</div>
+            <div class="swatch-rgb">RGB 26 · 26 · 26</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- 配色示範 -->
+  <!-- ============================================ -->
+  <div class="demo-section">
+    <div class="section-label">
+      <span class="section-num">04</span>
+      <span class="section-title">配色示範</span>
+      <span class="section-en">Color in Use</span>
+      <span class="section-line"></span>
+    </div>
+    
+    <p style="font-family: 'Noto Serif TC', serif; font-size: 14px; color: var(--c-deep-brown); margin-bottom: 28px; letter-spacing: 0.08em; padding-left: 8px;">
+      ✦ 每組配色嚴格遵循 <strong style="color: var(--c-candle-gold);">主色 70% + 輔助色 20% + 點綴色 10%</strong> 的比例 — 注意大面積、中等區塊、小點綴的視覺關係
+    </p>
+    
+    <div class="demo-grid">
+      
+      <!-- 範例 A:米白(主) + 深棕(輔) + 燭光金(點) -->
+      <div class="demo-mockup demo-mockup-a">
+        <!-- 大面積主色背景 -->
+        <div class="mockup-label">範例 A · 米白 70% + 深棕 20% + 燭光金 10%</div>
+        <div class="mockup-content-a">
+          <div class="mockup-headline-a">給懂自己的妳</div>
+          <div class="mockup-sub-a">— 從內到外，剛剛好 —</div>
+        </div>
+        <!-- 輔助色色塊（佔約 20% 面積） -->
+        <div class="mockup-aux-a">
+          <div class="aux-title">為日常忙碌的妳</div>
+          <div class="aux-btn">立即選購</div>
+        </div>
+        <!-- 點綴色小元素（佔約 10% 面積） -->
+        <div class="mockup-accent-a">限量 30 套</div>
+      </div>
+      
+      <!-- 範例 B:燕麥(主) + 墨綠(輔) + 燭光金(點) -->
+      <div class="demo-mockup demo-mockup-b">
+        <div class="mockup-label">範例 B · 燕麥 70% + 墨綠 20% + 燭光金 10%</div>
+        <div class="mockup-content-b">
+          <div class="mockup-headline-b">陪妳過好<br>每一個日常</div>
+        </div>
+        <div class="mockup-aux-b">
+          <div class="aux-title-b">居家服系列</div>
+          <div class="aux-divider-b"></div>
+          <div class="aux-text-b">下班後的鬆綁時光</div>
+        </div>
+        <div class="mockup-accent-b">NEW</div>
+      </div>
+      
+      <!-- 範例 C:奶茶(主) + 暮色紫(輔) + 墨黑(點) -->
+      <div class="demo-mockup demo-mockup-c">
+        <div class="mockup-label">範例 C · 奶茶 70% + 暮色紫 20% + 墨黑 10%</div>
+        <div class="mockup-content-c">
+          <div class="mockup-headline-c">不喧嘩<br>但耐看</div>
+          <div class="mockup-sub-c">MURO Underwear Collection</div>
+        </div>
+        <div class="mockup-aux-c">
+          <div class="aux-title-c">內衣選品</div>
+        </div>
+        <div class="mockup-accent-c">2026 SS</div>
+      </div>
+      
+      <!-- 範例 D:暮色灰(主) + 深棕(輔) + 燭光金(點) -->
+      <div class="demo-mockup demo-mockup-d">
+        <div class="mockup-label">範例 D · 暮色灰 70% + 深棕 20% + 燭光金 10%</div>
+        <div class="mockup-content-d">
+          <div class="mockup-headline-d">舒服、自在<br>剛剛好</div>
+        </div>
+        <div class="mockup-aux-d">
+          <div class="aux-title-d">本季精選</div>
+          <div class="aux-btn-d">了解更多 →</div>
+        </div>
+        <div class="mockup-accent-d">★ 編輯首選</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- 互動式配色搭配器 -->
+  <!-- ============================================ -->
+  <div class="playground-section">
+    <div class="section-label">
+      <span class="section-num">05</span>
+      <span class="section-title">互動式搭配器</span>
+      <span class="section-en">Color Playground</span>
+      <span class="section-line"></span>
+    </div>
+    
+    <p style="font-family: 'Noto Serif TC', serif; font-size: 14px; color: var(--c-deep-brown); margin-bottom: 32px; letter-spacing: 0.08em; padding-left: 8px;">
+      ✦ 點選色票來搭配你的配色 — 即時預覽 70/20/10 比例下的效果
+    </p>
+    
+    <div class="playground">
+      
+      <!-- 左:選色區 -->
+      <div class="playground-picker">
+        
+        <div class="picker-group">
+          <div class="picker-label">
+            <span class="picker-tag">70%</span>
+            <span class="picker-title">主色 Primary</span>
+          </div>
+          <div class="picker-swatches" data-group="primary">
+            <button class="picker-chip active" data-color="#F5F1EA" data-name="米白" data-text="dark" style="background:#F5F1EA; border:0.5px solid #9B9081"><span>米白</span></button>
+            <button class="picker-chip" data-color="#E8DFD0" data-name="燕麥" data-text="dark" style="background:#E8DFD0"><span>燕麥</span></button>
+            <button class="picker-chip" data-color="#D4C4AC" data-name="奶茶" data-text="dark" style="background:#D4C4AC"><span>奶茶</span></button>
+            <button class="picker-chip" data-color="#9B9081" data-name="暮色灰" data-text="light" style="background:#9B9081; color:#F5F1EA"><span>暮色灰</span></button>
+          </div>
+        </div>
+        
+        <div class="picker-group">
+          <div class="picker-label">
+            <span class="picker-tag">20%</span>
+            <span class="picker-title">輔助色 Secondary</span>
+          </div>
+          <div class="picker-swatches" data-group="secondary">
+            <button class="picker-chip active" data-color="#6B5640" data-name="深棕" data-text="light" style="background:#6B5640; color:#F5F1EA"><span>深棕</span></button>
+            <button class="picker-chip" data-color="#4A5247" data-name="墨綠" data-text="light" style="background:#4A5247; color:#F5F1EA"><span>墨綠</span></button>
+            <button class="picker-chip" data-color="#6B5B73" data-name="暮色紫" data-text="light" style="background:#6B5B73; color:#F5F1EA"><span>暮色紫</span></button>
+          </div>
+        </div>
+        
+        <div class="picker-group">
+          <div class="picker-label">
+            <span class="picker-tag">10%</span>
+            <span class="picker-title">點綴色 Accent</span>
+          </div>
+          <div class="picker-swatches" data-group="accent">
+            <button class="picker-chip active" data-color="#C9A876" data-name="燭光金" data-text="dark" style="background:#C9A876"><span>燭光金</span></button>
+            <button class="picker-chip" data-color="#1A1A1A" data-name="墨黑" data-text="light" style="background:#1A1A1A; color:#F5F1EA"><span>墨黑</span></button>
+          </div>
+        </div>
+        
+        <!-- 配色結果摘要 -->
+        <div class="recipe-card">
+          <div class="recipe-label">當前搭配</div>
+          <div class="recipe-content">
+            <div class="recipe-row">
+              <span class="recipe-percent">70%</span>
+              <span class="recipe-swatch" id="rec-primary-swatch"></span>
+              <span class="recipe-name" id="rec-primary-name">米白</span>
+              <span class="recipe-hex" id="rec-primary-hex">#F5F1EA</span>
+            </div>
+            <div class="recipe-row">
+              <span class="recipe-percent">20%</span>
+              <span class="recipe-swatch" id="rec-secondary-swatch"></span>
+              <span class="recipe-name" id="rec-secondary-name">深棕</span>
+              <span class="recipe-hex" id="rec-secondary-hex">#6B5640</span>
+            </div>
+            <div class="recipe-row">
+              <span class="recipe-percent">10%</span>
+              <span class="recipe-swatch" id="rec-accent-swatch"></span>
+              <span class="recipe-name" id="rec-accent-name">燭光金</span>
+              <span class="recipe-hex" id="rec-accent-hex">#C9A876</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- 右:即時預覽區 -->
+      <div class="playground-preview">
+        
+        <div class="preview-tabs">
+          <button class="preview-tab active" data-preview="poster">主圖海報</button>
+          <button class="preview-tab" data-preview="card">商品卡</button>
+          <button class="preview-tab" data-preview="banner">橫幅</button>
+        </div>
+        
+        <!-- 海報預覽 -->
+        <div class="preview-frame preview-poster active" id="preview-poster">
+          <div class="preview-stage" id="stage-poster">
+            <div class="poster-accent" id="poster-accent">限量 30 套</div>
+            <div class="poster-content">
+              <div class="poster-eyebrow" id="poster-eyebrow">MURO · NEW ARRIVAL</div>
+              <div class="poster-headline" id="poster-headline">給懂自己的妳</div>
+              <div class="poster-sub" id="poster-sub">— 從內到外,剛剛好 —</div>
+            </div>
+            <div class="poster-aux" id="poster-aux">
+              <div class="poster-aux-title">為日常忙碌的妳</div>
+              <div class="poster-aux-btn" id="poster-aux-btn">立即選購 →</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 商品卡預覽 -->
+        <div class="preview-frame preview-card" id="preview-card">
+          <div class="preview-stage" id="stage-card">
+            <div class="card-accent" id="card-accent">NEW</div>
+            <div class="card-image-area">
+              <div class="card-image-placeholder">商品照</div>
+            </div>
+            <div class="card-info" id="card-info">
+              <div class="card-title">無痕包覆內衣</div>
+              <div class="card-price-row">
+                <span class="card-price" id="card-price">NT$ 880</span>
+                <span class="card-btn" id="card-btn">加入購物車</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 橫幅預覽 -->
+        <div class="preview-frame preview-banner" id="preview-banner">
+          <div class="preview-stage" id="stage-banner">
+            <div class="banner-side" id="banner-side">
+              <div class="banner-tag" id="banner-tag">2026 SS</div>
+              <div class="banner-title">本季精選</div>
+            </div>
+            <div class="banner-main">
+              <div class="banner-eyebrow" id="banner-eyebrow">MURO COLLECTION</div>
+              <div class="banner-headline">舒服 自在<br>剛剛好</div>
+              <div class="banner-line" id="banner-line"></div>
+              <div class="banner-foot">為懂自己的妳精選每一件</div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  <!-- ============================================ -->
+  <!-- 使用規則 -->
+  <!-- ============================================ -->
+  <div class="rules-section">
+    <div class="section-label">
+      <span class="section-num">06</span>
+      <span class="section-title">使用規則</span>
+      <span class="section-en">Guidelines</span>
+      <span class="section-line"></span>
+    </div>
+    
+    <div class="rules-grid">
+      <div class="rule-col rule-yes">
+        <div class="rule-head">✓ Always</div>
+        <ul class="rule-list">
+          <li>主圖背景以米白、燕麥色為底</li>
+          <li>大面積使用主色,輔助色點綴</li>
+          <li>文字優先使用墨黑或深棕</li>
+          <li>促銷標、價格用燭光金</li>
+          <li>保持 60% 以上的留白比例</li>
+          <li>同一張主圖最多使用 3 種色</li>
+        </ul>
+      </div>
+      
+      <div class="rule-col rule-no">
+        <div class="rule-head">✗ Never</div>
+        <ul class="rule-list">
+          <li>螢光色、桃紅、寶藍、純亮黃</li>
+          <li>純白底配高飽和色塊</li>
+          <li>紅底+黃字+黑邊的「夜市感」</li>
+          <li>大字「限時優惠 / 最後 3 件」</li>
+          <li>漸層、霓虹、塑膠光澤質感</li>
+          <li>主圖塞滿、沒有呼吸空間</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- 頁尾 -->
+  <!-- ============================================ -->
+  <footer>
+    <div class="footer-quote">— 不喧嘩,但耐看 · 不浮誇,但講究 —</div>
+    <div class="footer-meta">MURO 暮若 · Brand System v1.0 · 2026</div>
+  </footer>
+
+</div>
+
+<script>
+(function() {
+  // 當前選擇
+  const state = {
+    primary: { color: '#F5F1EA', name: '米白', text: 'dark' },
+    secondary: { color: '#6B5640', name: '深棕', text: 'light' },
+    accent: { color: '#C9A876', name: '燭光金', text: 'dark' }
+  };
+  
+  // 文字色判斷:depth 為 light 表示這個底色上要用淺色文字
+  function textColorOn(depth) {
+    return depth === 'light' ? '#F5F1EA' : '#1A1A1A';
+  }
+  
+  function updateRecipe() {
+    document.getElementById('rec-primary-swatch').style.background = state.primary.color;
+    document.getElementById('rec-primary-name').textContent = state.primary.name;
+    document.getElementById('rec-primary-hex').textContent = state.primary.color;
+    
+    document.getElementById('rec-secondary-swatch').style.background = state.secondary.color;
+    document.getElementById('rec-secondary-name').textContent = state.secondary.name;
+    document.getElementById('rec-secondary-hex').textContent = state.secondary.color;
+    
+    document.getElementById('rec-accent-swatch').style.background = state.accent.color;
+    document.getElementById('rec-accent-name').textContent = state.accent.name;
+    document.getElementById('rec-accent-hex').textContent = state.accent.color;
+  }
+  
+  function updatePoster() {
+    const stage = document.getElementById('stage-poster');
+    const eyebrow = document.getElementById('poster-eyebrow');
+    const headline = document.getElementById('poster-headline');
+    const sub = document.getElementById('poster-sub');
+    const aux = document.getElementById('poster-aux');
+    const auxBtn = document.getElementById('poster-aux-btn');
+    const accent = document.getElementById('poster-accent');
+    
+    // 主色 = 大背景
+    stage.style.background = state.primary.color;
+    const mainText = textColorOn(state.primary.text);
+    eyebrow.style.color = mainText;
+    headline.style.color = mainText;
+    sub.style.color = mainText;
+    
+    // 輔助色 = 底部色帶
+    aux.style.background = state.secondary.color;
+    const auxText = textColorOn(state.secondary.text);
+    aux.style.color = auxText;
+    
+    // 點綴色 = 右上小標
+    accent.style.color = state.accent.color;
+    accent.style.borderColor = state.accent.color;
+  }
+  
+  function updateCard() {
+    const stage = document.getElementById('stage-card');
+    const info = document.getElementById('card-info');
+    const accent = document.getElementById('card-accent');
+    const btn = document.getElementById('card-btn');
+    const price = document.getElementById('card-price');
+    
+    // 主色 = 卡片大背景
+    stage.style.background = state.primary.color;
+    
+    // 輔助色 = 底部資訊區
+    info.style.background = state.secondary.color;
+    info.style.color = textColorOn(state.secondary.text);
+    
+    // 按鈕和價格用點綴色
+    btn.style.color = state.accent.color;
+    btn.style.borderColor = state.accent.color;
+    price.style.color = state.accent.color;
+    
+    // accent 標籤在主色區
+    accent.style.color = state.accent.color;
+  }
+  
+  function updateBanner() {
+    const stage = document.getElementById('stage-banner');
+    const side = document.getElementById('banner-side');
+    const tag = document.getElementById('banner-tag');
+    const eyebrow = document.getElementById('banner-eyebrow');
+    const line = document.getElementById('banner-line');
+    
+    // 主色 = 右側大區
+    stage.style.background = state.primary.color;
+    const mainText = textColorOn(state.primary.text);
+    stage.style.color = mainText;
+    eyebrow.style.color = mainText;
+    
+    // 輔助色 = 左側 sidebar
+    side.style.background = state.secondary.color;
+    side.style.color = textColorOn(state.secondary.text);
+    
+    // 點綴色 = 標籤、分隔線
+    tag.style.color = state.accent.color;
+    line.style.background = state.accent.color;
+  }
+  
+  function updateAll() {
+    updateRecipe();
+    updatePoster();
+    updateCard();
+    updateBanner();
+  }
+  
+  // 綁定色票點擊事件
+  document.querySelectorAll('.picker-chip').forEach(chip => {
+    chip.addEventListener('click', function() {
+      const group = this.parentElement.dataset.group; // primary/secondary/accent
+      const color = this.dataset.color;
+      const name = this.dataset.name;
+      const text = this.dataset.text;
+      
+      // 更新 state
+      state[group] = { color, name, text };
+      
+      // 切換 active class
+      this.parentElement.querySelectorAll('.picker-chip').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+      
+      // 重繪
+      updateAll();
+    });
+  });
+  
+  // 預覽切換 tabs
+  document.querySelectorAll('.preview-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      const target = this.dataset.preview; // poster/card/banner
+      document.querySelectorAll('.preview-tab').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      document.querySelectorAll('.preview-frame').forEach(f => f.classList.remove('active'));
+      document.getElementById('preview-' + target).classList.add('active');
+    });
+  });
+  
+  // 初始化
+  updateAll();
+})();
+</script>
+
+</body>
+</html>
